@@ -12,7 +12,7 @@ __docformat__ = 'reStructuredText'
 
 import sys
 import rospy
-from hw1.srv import *
+from turtlebot_search.srv import *
 import collections
 
 class State:

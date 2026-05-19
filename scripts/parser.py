@@ -24,10 +24,10 @@ parser.add_argument("--algorithm",
     type=str,
     help="The algorithm to run")
     
-parser.add_argument("--submit",
+parser.add_argument("--run",
     default=False,
     action="store_true",
-    help="Run the experiments required for submission")
+    help="Run the experiments required for results")
     
 parser.add_argument("--output-file",
     default=None,

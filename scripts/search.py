@@ -28,7 +28,7 @@ import time
 from utils import initialize_ros
 from utils import cleanup_ros
 
-SUBMIT_FILENAME = "submission/hw1_results.csv"
+SUBMIT_FILENAME = "results/turtlebot_search_results.csv"
 SUBMIT_SEARCH_TIME_LIMIT = 300
 
 class SearchTimeOutError(Exception):
@@ -91,9 +91,9 @@ def build_solution(best_path, current_node):
     return action_list
 
 
-def submit(file_handle, env):
+def run(file_handle, env):
     """
-        Runs the tests that need to be submitted as a part of this Homework.
+        Runs the tests that need to be evaluated as a part of this project.
         
         Parameters
         ===========
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     # Check which algorithms we are running.
-    if args.algorithm is None or "all" == args.algorithm or args.submit:
+    if args.algorithm is None or "all" == args.algorithm or args.run:
     
         algorithms = ["bfs", "ucs", "gbfs", "astar", "custom-astar"]
     else:
@@ -237,7 +237,7 @@ if __name__ == "__main__":
     if args.output_file is not None:
         
         file_handle = open(args.output_file, "w")
-    elif args.submit:
+    elif args.run:
     
         file_name = os.path.join(os.path.dirname(os.path.dirname(__file__)), SUBMIT_FILENAME)
         file_handle = open(file_name, "w")
@@ -260,10 +260,10 @@ if __name__ == "__main__":
     # Initialize the search server.
     server_process = initialize_search_server()
 
-    # If using submit mode, run the submission files.
-    if args.submit:
+    # If using run mode, run the results files.
+    if args.run:
     
-        submit(file_handle, args.env)
+        run(file_handle, args.env)
     else:
 
         # Else, run an individual search.

@@ -10,8 +10,8 @@ __maintainers__ = ["Pulkit Verma", "Abhyudaya Srinet"]
 __contact__ = "aair.lab@asu.edu"
 __docformat__ = 'reStructuredText'
 
-from hw1.srv import *
-from hw1.msg import *
+from turtlebot_search.srv import *
+from turtlebot_search.msg import *
 import rospy
 from gen_maze import *
 from maze_objects import *
@@ -213,7 +213,7 @@ def initialize_search_server():
     fileHandle=open("/dev/null", "w")
 
     # Start the server.
-    proc = subprocess.Popen("rosrun hw1 server.py", shell=True)
+    proc = subprocess.Popen("rosrun turtlebot_search server.py", shell=True)
     return proc
 
 
