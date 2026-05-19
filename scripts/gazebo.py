@@ -76,11 +76,11 @@ def execute_on_gazebo(plan_str):
     time.sleep(2)
     
     # Start to move the turtle bot.
-    x = subprocess.Popen("rosrun hw1 move_tbot3.py", shell=True,
+    x = subprocess.Popen("rosrun turtlebot_search move_tbot3.py", shell=True,
         stdout=null_file_handle, stderr=null_file_handle)
     
     # Start Gazebo.
-    subprocess.Popen("roslaunch hw1 maze.launch", shell=True,
+    subprocess.Popen("roslaunch turtlebot_search maze.launch", shell=True,
         stdout=null_file_handle, stderr=null_file_handle)
     
     # Sleep for some time to allow Gazebo to start.
