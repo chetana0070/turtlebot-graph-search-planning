@@ -1,6 +1,6 @@
 # TurtleBot Graph Search Path Planning
 
-This repository implements graph-search based path planning for a TurtleBot grid-world environment. The planner supports Breadth-First Search, Greedy Best-First Search, Uniform Cost Search, A* Search, and a custom A* heuristic.
+Graph-search based path planning for a TurtleBot grid-world environment. The planner supports Breadth-First Search, Greedy Best-First Search, Uniform Cost Search, A* Search, and a custom A* heuristic.
 
 The project evaluates each search method using path search time and node expansion count across different grid dimensions and obstacle settings.
 
